@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO -->
+    <title>Odd Bots — Odd Tech</title>
+    <meta name="description" content="Affordable, ruggedized agricultural robotics built for the African terrain.">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Odd Bots — Agricultural Robotics">
+    <meta property="og:description" content="Automating labor-intensive farming tasks with solar-assisted units.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzBBMEEwQSIvPjxwYXRoIGQ9Ik05MCA1MCBBNDAgNDAgMCAxIDEgNTAgMTAgTDUwIDUwIFoiIGZpbGw9IiNGNEY0RjQiLz48L3N2Zz4=" type="image/svg+xml">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;700;900&family=Inter:wght@300;400;600&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+      .bg-noise {
+        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 50; opacity: 0.05;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+      body { background-color: #0A0A0A; color: #F4F4F4; font-family: 'Inter', sans-serif; }
+      h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
+      .font-technical { font-family: 'Archivo', sans-serif; }
+      ::selection { background: #F87171; color: #0A0A0A; } /* Red Accent */
+
+      /* Reading Progress Bar */
+      #progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 4px;
+        background: #F87171;
+        z-index: 100;
+        width: 0%;
+        transition: width 0.1s;
+      }
+    </style>
+  </head>
+  <body class="overflow-x-hidden">
+    <div class="bg-noise"></div>
+    <div id="progress-bar"></div>
+
+    <nav class="fixed top-0 left-0 w-full z-40 border-b border-[#333] bg-[#0A0A0A]/95 backdrop-blur-md">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-2 text-[#888] hover:text-white transition-colors font-technical text-sm uppercase tracking-wider">
+          &larr; Back to Ecosystem
+        </a>
+        <div class="text-white font-bold tracking-tight">ODD BOTS</div>
+      </div>
+    </nav>
+
+    <section class="min-h-screen flex items-center pt-20 border-b border-[#333] relative">
+      <div class="max-w-7xl mx-auto px-6 w-full">
+         <div class="inline-block px-3 py-1 border border-red-500/30 text-red-400 text-[10px] font-technical tracking-[0.2em] mb-8 uppercase bg-red-500/10">
+            Robotics / R&D
+         </div>
+         <h1 class="text-5xl md:text-8xl font-bold mb-8 leading-none tracking-tighter">
+           AGRICULTURAL<br/><span class="text-red-400">ROBOTICS.</span>
+         </h1>
+         <p class="text-xl text-[#888] max-w-2xl mb-12 font-light">
+           Hardware built for the African terrain. We develop affordable, ruggedized robots to assist with labor-intensive farming tasks.
+         </p>
+
+         <div class="p-6 md:p-10 border border-[#333] bg-[#0F0F0F] inline-block min-w-[300px]">
+           <p class="text-xs font-technical text-[#666] uppercase tracking-widest mb-4">Target Launch</p>
+           <div id="countdown" class="grid grid-cols-4 gap-4 md:gap-8 text-center">
+              <div><span class="text-2xl md:text-4xl font-bold block" id="days">00</span><span class="text-[10px] text-[#444] uppercase">Days</span></div>
+              <div><span class="text-2xl md:text-4xl font-bold block" id="hours">00</span><span class="text-[10px] text-[#444] uppercase">Hrs</span></div>
+              <div><span class="text-2xl md:text-4xl font-bold block" id="minutes">00</span><span class="text-[10px] text-[#444] uppercase">Min</span></div>
+              <div><span class="text-2xl md:text-4xl font-bold block" id="seconds">00</span><span class="text-[10px] text-[#444] uppercase">Sec</span></div>
+           </div>
+           <p class="text-center text-xs font-technical text-red-400 mt-6 tracking-widest uppercase">July 2026</p>
+         </div>
+      </div>
+    </section>
+
+    <!-- Problem/Solution -->
+    <section class="py-24 border-b border-[#333]">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div>
+          <h2 class="text-3xl font-bold mb-6">The Problem</h2>
+          <p class="text-[#AAA] leading-relaxed mb-8">
+             Mechanization in African agriculture is expensive and often imported, meaning it isn't designed for local soil or terrain. Manual labor is inefficient and physically draining.
+          </p>
+          <h2 class="text-3xl font-bold mb-6">The Solution</h2>
+          <p class="text-[#AAA] leading-relaxed">
+            Odd Bots designs rugged, solar-assisted robotic units capable of weeding, planting, and monitoring crops. Our focus is on durability, repairability, and cost-effectiveness for cooperative farming groups.
+          </p>
+        </div>
+        <div class="border border-[#333] bg-[#0F0F0F] p-8">
+           <h3 class="font-technical text-sm uppercase tracking-widest text-[#666] mb-8">Project Status</h3>
+           <div class="relative pl-8 border-l border-[#333] space-y-12">
+             <div class="relative">
+               <span class="absolute -left-[37px] top-1 w-4 h-4 rounded-full bg-red-400 border-4 border-[#0A0A0A]"></span>
+               <h4 class="text-white font-bold">Inception</h4>
+               <p class="text-sm text-[#666] mt-1">Feasibility Study & Design.</p>
+             </div>
+             <div class="relative opacity-50">
+               <span class="absolute -left-[37px] top-1 w-4 h-4 rounded-full bg-[#333] border-4 border-[#0A0A0A]"></span>
+               <h4 class="text-white font-bold">Prototype V1</h4>
+               <p class="text-sm text-[#666] mt-1">Early 2026</p>
+             </div>
+             <div class="relative opacity-50">
+               <span class="absolute -left-[37px] top-1 w-4 h-4 rounded-full bg-[#333] border-4 border-[#0A0A0A]"></span>
+               <h4 class="text-white font-bold">Launch</h4>
+               <p class="text-sm text-[#666] mt-1">July 2026</p>
+             </div>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spec Sheet -->
+    <section class="py-24 border-b border-[#333] bg-[#0F0F0F]">
+       <div class="max-w-7xl mx-auto px-6">
+          <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+            <h2 class="text-3xl md:text-5xl font-bold">MODEL X-1 SPECIFICATION</h2>
+            <span class="font-technical text-red-400 text-xs tracking-widest uppercase">Target Specs</span>
+          </div>
+
+          <div class="border border-[#333] bg-[#0A0A0A]">
+             <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-[#333]">
+                <!-- Item 1 -->
+                <div class="p-8 flex justify-between items-center group">
+                   <div>
+                      <h4 class="text-[#888] font-technical text-xs uppercase tracking-widest mb-1">Power Source</h4>
+                      <p class="text-white font-bold text-xl">Solar + Li-Ion Hybrid</p>
+                   </div>
+                   <svg class="w-8 h-8 text-red-400 opacity-50 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <!-- Item 2 -->
+                 <div class="p-8 flex justify-between items-center group">
+                   <div>
+                      <h4 class="text-[#888] font-technical text-xs uppercase tracking-widest mb-1">Operation Time</h4>
+                      <p class="text-white font-bold text-xl">12 Hours Continuous</p>
+                   </div>
+                   <svg class="w-8 h-8 text-red-400 opacity-50 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+             </div>
+             <div class="border-t border-[#333] grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-[#333]">
+                <!-- Item 3 -->
+                <div class="p-8 flex justify-between items-center group">
+                   <div>
+                      <h4 class="text-[#888] font-technical text-xs uppercase tracking-widest mb-1">Terrain Type</h4>
+                      <p class="text-white font-bold text-xl">All-Terrain / Mud Compliant</p>
+                   </div>
+                   <svg class="w-8 h-8 text-red-400 opacity-50 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"></path></svg>
+                </div>
+                <!-- Item 4 -->
+                 <div class="p-8 flex justify-between items-center group">
+                   <div>
+                      <h4 class="text-[#888] font-technical text-xs uppercase tracking-widest mb-1">Connectivity</h4>
+                      <p class="text-white font-bold text-xl">LoRaWAN / GSM Backup</p>
+                   </div>
+                   <svg class="w-8 h-8 text-red-400 opacity-50 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"></path></svg>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section>
+
+    <!-- Waitlist CTA -->
+    <section class="py-24 border-b border-[#333]">
+       <div class="max-w-3xl mx-auto px-6 text-center">
+          <h2 class="text-4xl font-bold mb-4">REGISTER INTEREST</h2>
+          <p class="text-[#888] mb-12">We are looking for agricultural partners and early investors.</p>
+          
+          <div id="form-container">
+            <form id="waitlist-form" class="flex flex-col md:flex-row gap-4">
+                <input type="email" placeholder="EMAIL ADDRESS" required class="flex-1 bg-transparent border border-[#333] px-6 py-4 text-white placeholder-[#444] font-technical uppercase text-sm focus:outline-none focus:border-red-400 transition-colors">
+                <button type="submit" class="bg-red-400 hover:bg-red-300 text-black px-8 py-4 font-bold font-technical uppercase tracking-widest transition-colors">Contact Me</button>
+            </form>
+          </div>
+          
+           <div id="success-message" class="hidden py-4 border border-red-400/20 bg-red-400/5">
+              <p class="text-red-400 font-technical uppercase tracking-widest text-sm">TRANSMISSION RECEIVED. THANK YOU.</p>
+          </div>
+       </div>
+    </section>
+
+    <!-- Other Ventures -->
+    <section class="py-12 border-b border-[#333] bg-[#0A0A0A]">
+      <div class="max-w-7xl mx-auto px-6">
+        <h4 class="text-xs font-technical text-[#666] uppercase tracking-widest mb-6">Explore Other Ventures</h4>
+        <div class="flex flex-wrap gap-8 items-center">
+           <a href="odd-agric.html" class="text-xl md:text-2xl font-bold text-[#888] hover:text-green-400 transition-colors flex items-center gap-2 group">
+             Odd Agric 
+             <span class="text-sm opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-green-400">&rarr;</span>
+           </a>
+           <a href="eunoia.html" class="text-xl md:text-2xl font-bold text-[#888] hover:text-blue-400 transition-colors flex items-center gap-2 group">
+             Eunoia
+             <span class="text-sm opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-blue-400">&rarr;</span>
+           </a>
+           <a href="tech-trek.html" class="text-xl md:text-2xl font-bold text-[#888] hover:text-yellow-400 transition-colors flex items-center gap-2 group">
+             Tech Trek
+             <span class="text-sm opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-yellow-400">&rarr;</span>
+           </a>
+           <a href="odd-designs.html" class="text-xl md:text-2xl font-bold text-[#888] hover:text-pink-500 transition-colors flex items-center gap-2 group">
+             Odd Designs
+             <span class="text-sm opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-pink-500">&rarr;</span>
+           </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-12 px-6 text-center bg-[#0A0A0A] flex flex-col items-center gap-4">
+      <div class="flex gap-6 text-[#444] text-xs font-technical uppercase tracking-wider">
+         <span>&copy; 2026 Odd Tech.</span>
+         <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
+      </div>
+      <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="mt-4 text-[#666] hover:text-white font-technical text-xs uppercase tracking-widest transition-colors">
+          Back to Top &uarr;
+       </button>
+    </footer>
+
+    <script>
+      // Form Handling
+      const form = document.getElementById('waitlist-form');
+      const formContainer = document.getElementById('form-container');
+      const successMessage = document.getElementById('success-message');
+
+      form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          formContainer.style.opacity = '0';
+          setTimeout(() => {
+              formContainer.style.display = 'none';
+              successMessage.classList.remove('hidden');
+              successMessage.classList.add('animate-fade-in-up');
+          }, 300);
+      });
+
+      // Scroll Progress Bar
+      window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+      };
+
+      // Target Date: July 1, 2026
+      const targetDate = new Date('July 1, 2026 00:00:00').getTime();
+
+      const timer = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+        document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+        document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+        document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+
+        if (distance < 0) {
+          clearInterval(timer);
+          document.getElementById("countdown").innerHTML = "LAUNCHED";
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>

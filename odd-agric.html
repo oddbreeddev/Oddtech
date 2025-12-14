@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO -->
+    <title>Odd Agric — Odd Tech</title>
+    <meta name="description" content="Smart farming automation for resource-constrained environments. Maximizing yield with IoT.">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Odd Agric — Smart Farming Automation">
+    <meta property="og:description" content="Maximizing yield in resource-constrained environments via IoT and automation.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzBBMEEwQSIvPjxwYXRoIGQ9Ik05MCA1MCBBNDAgNDAgMCAxIDEgNTAgMTAgTDUwIDUwIFoiIGZpbGw9IiNGNEY0RjQiLz48L3N2Zz4=" type="image/svg+xml">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;700;900&family=Inter:wght@300;400;600&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+      .bg-noise {
+        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 50; opacity: 0.05;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+      body { background-color: #0A0A0A; color: #F4F4F4; font-family: 'Inter', sans-serif; }
+      h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
+      .font-technical { font-family: 'Archivo', sans-serif; }
+      ::selection { background: #4ADE80; color: #0A0A0A; } /* Green Accent */
+
+      /* Reading Progress Bar */
+      #progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 4px;
+        background: #4ADE80;
+        z-index: 100;
+        width: 0%;
+        transition: width 0.1s;
+      }
+    </style>
+  </head>
+  <body class="overflow-x-hidden">
+    <div class="bg-noise"></div>
+    <div id="progress-bar"></div>
+
+    <nav class="fixed top-0 left-0 w-full z-40 border-b border-[#333] bg-[#0A0A0A]/95 backdrop-blur-md">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-2 text-[#888] hover:text-white transition-colors font-technical text-sm uppercase tracking-wider">
+          &larr; Back to Ecosystem
+        </a>
+        <div class="text-white font-bold tracking-tight">ODD AGRIC</div>
+      </div>
+    </nav>
+
+    <section class="min-h-screen flex items-center pt-20 border-b border-[#333] relative">
+      <div class="max-w-7xl mx-auto px-6 w-full">
+         <div class="inline-block px-3 py-1 border border-green-500/30 text-green-400 text-[10px] font-technical tracking-[0.2em] mb-8 uppercase bg-green-500/10">
+            Agritech / IoT
+         </div>
+         <h1 class="text-5xl md:text-8xl font-bold mb-8 leading-none tracking-tighter">
+           SMART FARMING<br/><span class="text-green-500">AUTOMATION.</span>
+         </h1>
+         <p class="text-xl text-[#888] max-w-2xl mb-12 font-light">
+           Maximizing yield in resource-constrained environments. By automating irrigation based on real-time soil data, we remove the guesswork from farming.
+         </p>
+
+         <div class="p-6 md:p-10 border border-[#333] bg-[#0F0F0F] inline-block min-w-[300px]">
+           <p class="text-xs font-technical text-[#666] uppercase tracking-widest mb-4">Target Launch</p>
+           <div id="countdown" class="grid grid-cols-4 gap-4 md:gap-8 text-center">
+              <div><span class="text-2xl md:text-4xl font-bold block" id="days">00</span><span class="text-[10px] text-[#444] uppercase">Days</span></div>
+              <div><span class="text-2xl md:text-4xl font-bold block" id="hours">00</span><span class="text-[10px] text-[#444] uppercase">Hrs</span></div>
+              <div><span class="text-2xl md:text-4xl font-bold block" id="minutes">00</span><span class="text-[10px] text-[#444] uppercase">Min</span></div>
+              <div><span class="text-2xl md:text-4xl font-bold block" id="seconds">00</span><span class="text-[10px] text-[#444] uppercase">Sec</span></div>
+           </div>
+           <p class="text-center text-xs font-technical text-green-400 mt-6 tracking-widest uppercase">July 2026</p>
+         </div>
+      </div>
+    </section>
+
+    <!-- Problem / Solution -->
+    <section class="py-24 border-b border-[#333]">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div>
+          <h2 class="text-3xl font-bold mb-6">The Problem</h2>
+          <p class="text-[#AAA] leading-relaxed mb-8">
+            Smallholder farmers in Africa face unpredictable weather patterns and limited water resources. Traditional irrigation is labor-intensive and inefficient, often leading to crop failure or water wastage.
+          </p>
+          <h2 class="text-3xl font-bold mb-6">The Solution</h2>
+          <p class="text-[#AAA] leading-relaxed">
+            Odd Agric provides affordable IoT sensors that monitor soil moisture and nutrient levels. Connected to an automated irrigation controller, the system waters crops precisely when needed, increasing yield while conserving water and power.
+          </p>
+        </div>
+        <div class="border border-[#333] bg-[#0F0F0F] p-8">
+           <h3 class="font-technical text-sm uppercase tracking-widest text-[#666] mb-8">Project Status</h3>
+           <div class="relative pl-8 border-l border-[#333] space-y-12">
+             <div class="relative">
+               <span class="absolute -left-[37px] top-1 w-4 h-4 rounded-full bg-green-500 border-4 border-[#0A0A0A]"></span>
+               <h4 class="text-white font-bold">Inception</h4>
+               <p class="text-sm text-[#666] mt-1">Research & Concept Validation.</p>
+             </div>
+             <div class="relative opacity-50">
+               <span class="absolute -left-[37px] top-1 w-4 h-4 rounded-full bg-[#333] border-4 border-[#0A0A0A]"></span>
+               <h4 class="text-white font-bold">Prototyping</h4>
+               <p class="text-sm text-[#666] mt-1">Q4 2025</p>
+             </div>
+             <div class="relative opacity-50">
+               <span class="absolute -left-[37px] top-1 w-4 h-4 rounded-full bg-[#333] border-4 border-[#0A0A0A]"></span>
+               <h4 class="text-white font-bold">Launch</h4>
+               <p class="text-sm text-[#666] mt-1">July 2026</p>
+             </div>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Schematic -->
+    <section class="py-24 border-b border-[#333] bg-[#0F0F0F]">
+       <div class="max-w-7xl mx-auto px-6">
+          <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+            <h2 class="text-3xl md:text-5xl font-bold">SYSTEM ARCHITECTURE</h2>
+            <span class="font-technical text-green-400 text-xs tracking-widest uppercase">Diagram v1.0</span>
+          </div>
+          
+          <!-- Diagram Container -->
+          <div class="border border-[#333] p-8 md:p-16 relative overflow-hidden bg-[#0A0A0A]">
+             <!-- Background Grid -->
+             <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px); background-size: 20px 20px;"></div>
+             
+             <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-center items-center">
+                <!-- Node 1 -->
+                <div class="flex flex-col items-center">
+                   <div class="w-24 h-24 border-2 border-green-500 rounded-full flex items-center justify-center bg-[#0F0F0F] mb-4 relative">
+                      <div class="w-2 h-2 bg-green-500 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+                      <div class="w-2 h-2 bg-green-500 absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2"></div>
+                      <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                   </div>
+                   <h4 class="font-bold text-white mb-2">FIELD SENSORS</h4>
+                   <p class="text-xs text-[#666] max-w-[150px]">Soil Moisture, NPK Levels, Temp</p>
+                </div>
+
+                <!-- Connector -->
+                <div class="hidden md:block h-px w-full bg-gradient-to-r from-transparent via-green-500 to-transparent"></div>
+
+                <!-- Node 2 -->
+                <div class="flex flex-col items-center">
+                   <div class="w-32 h-32 border-2 border-[#666] flex items-center justify-center bg-[#0F0F0F] mb-4 relative">
+                      <div class="absolute inset-0 border border-green-500/20 m-1"></div>
+                      <span class="font-technical font-bold text-xl">HUB</span>
+                   </div>
+                   <h4 class="font-bold text-white mb-2">CENTRAL CONTROLLER</h4>
+                   <p class="text-xs text-[#666] max-w-[150px]">Local Data Processing & Valve Control</p>
+                </div>
+
+                <!-- Connector -->
+                <div class="hidden md:block h-px w-full bg-gradient-to-r from-transparent via-green-500 to-transparent"></div>
+
+                <!-- Node 3 -->
+                <div class="flex flex-col items-center">
+                   <div class="w-24 h-24 border-2 border-green-500 rounded-lg flex items-center justify-center bg-[#0F0F0F] mb-4">
+                      <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                   </div>
+                   <h4 class="font-bold text-white mb-2">FARMER APP</h4>
+                   <p class="text-xs text-[#666] max-w-[150px]">Real-time Alerts & Manual Override</p>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section>
+
+    <!-- Waitlist CTA -->
+    <section class="py-24 border-b border-[#333]">
+       <div class="max-w-3xl mx-auto px-6 text-center">
+          <h2 class="text-4xl font-bold mb-4">JOIN THE PILOT PROGRAM</h2>
+          <p class="text-[#888] mb-12">We are selecting 50 farms for our 2026 beta test. Secure your spot on the grid.</p>
+          
+          <div id="form-container">
+            <form id="waitlist-form" class="flex flex-col md:flex-row gap-4">
+                <input type="email" placeholder="ENTER YOUR EMAIL ADDRESS" required class="flex-1 bg-transparent border border-[#333] px-6 py-4 text-white placeholder-[#444] font-technical uppercase text-sm focus:outline-none focus:border-green-500 transition-colors">
+                <button type="submit" class="bg-green-500 hover:bg-green-400 text-black px-8 py-4 font-bold font-technical uppercase tracking-widest transition-colors">Request Access</button>
+            </form>
+          </div>
+          
+          <div id="success-message" class="hidden py-4 border border-green-500/20 bg-green-500/5">
+              <p class="text-green-400 font-technical uppercase tracking-widest text-sm">TRANSMISSION RECEIVED. WE WILL BE IN TOUCH.</p>
+          </div>
+       </div>
+    </section>
+
+    <!-- Other Ventures -->
+    <section class="py-12 border-b border-[#333] bg-[#0A0A0A]">
+      <div class="max-w-7xl mx-auto px-6">
+        <h4 class="text-xs font-technical text-[#666] uppercase tracking-widest mb-6">Explore Other Ventures</h4>
+        <div class="flex flex-wrap gap-8 items-center">
+           <a href="eunoia.html" class="text-xl md:text-2xl font-bold text-[#888] hover:text-blue-400 transition-colors flex items-center gap-2 group">
+             Eunoia
+             <span class="text-sm opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-blue-400">&rarr;</span>
+           </a>
+           <a href="tech-trek.html" class="text-xl md:text-2xl font-bold text-[#888] hover:text-yellow-400 transition-colors flex items-center gap-2 group">
+             Tech Trek
+             <span class="text-sm opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-yellow-400">&rarr;</span>
+           </a>
+           <a href="odd-bots.html" class="text-xl md:text-2xl font-bold text-[#888] hover:text-red-400 transition-colors flex items-center gap-2 group">
+             Odd Bots
+             <span class="text-sm opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-red-400">&rarr;</span>
+           </a>
+           <a href="odd-designs.html" class="text-xl md:text-2xl font-bold text-[#888] hover:text-pink-500 transition-colors flex items-center gap-2 group">
+             Odd Designs
+             <span class="text-sm opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-pink-500">&rarr;</span>
+           </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-12 px-6 text-center bg-[#0A0A0A] flex flex-col items-center gap-4">
+      <div class="flex gap-6 text-[#444] text-xs font-technical uppercase tracking-wider">
+         <span>&copy; 2026 Odd Tech.</span>
+         <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
+      </div>
+       <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="mt-4 text-[#666] hover:text-white font-technical text-xs uppercase tracking-widest transition-colors">
+          Back to Top &uarr;
+       </button>
+    </footer>
+
+    <script>
+      // Form Handling
+      const form = document.getElementById('waitlist-form');
+      const formContainer = document.getElementById('form-container');
+      const successMessage = document.getElementById('success-message');
+
+      form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          formContainer.style.opacity = '0';
+          setTimeout(() => {
+              formContainer.style.display = 'none';
+              successMessage.classList.remove('hidden');
+              successMessage.classList.add('animate-fade-in-up');
+          }, 300);
+      });
+
+      // Scroll Progress Bar Logic
+      window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+      };
+
+      // Target Date: July 1, 2026
+      const targetDate = new Date('July 1, 2026 00:00:00').getTime();
+
+      const timer = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+        document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+        document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+        document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+
+        if (distance < 0) {
+          clearInterval(timer);
+          document.getElementById("countdown").innerHTML = "LAUNCHED";
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>

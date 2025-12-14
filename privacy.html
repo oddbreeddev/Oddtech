@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy — Odd Tech</title>
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzBBMEEwQSIvPjxwYXRoIGQ9Ik05MCA1MCBBNDAgNDAgMCAxIDEgNTAgMTAgTDUwIDUwIFoiIGZpbGw9IiNGNEY0RjQiLz48L3N2Zz4=" type="image/svg+xml">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;700;900&family=Inter:wght@300;400;600&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+      body { background-color: #0A0A0A; color: #F4F4F4; font-family: 'Inter', sans-serif; }
+      h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+      .font-technical { font-family: 'Archivo', sans-serif; }
+      ::selection { background: #F4F4F4; color: #0A0A0A; }
+    </style>
+  </head>
+  <body class="overflow-x-hidden">
+    
+    <nav class="fixed top-0 left-0 w-full z-40 border-b border-[#333] bg-[#0A0A0A]/95 backdrop-blur-md">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-2 text-[#888] hover:text-white transition-colors font-technical text-sm uppercase tracking-wider">
+          &larr; Return to Grid
+        </a>
+        <div class="text-white font-bold tracking-tight">LEGAL</div>
+      </div>
+    </nav>
+
+    <div class="max-w-4xl mx-auto px-6 py-32">
+        <h1 class="text-4xl md:text-6xl font-bold mb-12">PRIVACY PROTOCOLS</h1>
+        
+        <div class="space-y-12">
+            <div class="border-t border-[#333] pt-8">
+                <h3 class="text-xl font-bold mb-4 text-white">01. Data Collection</h3>
+                <p class="text-[#888] leading-relaxed">
+                    Odd Tech is a solution-driven company, not a data broker. We only collect information you explicitly provide (email addresses for waitlists, contact inquiries). We do not use third-party trackers or invasive analytics cookies.
+                </p>
+            </div>
+
+            <div class="border-t border-[#333] pt-8">
+                <h3 class="text-xl font-bold mb-4 text-white">02. Usage</h3>
+                <p class="text-[#888] leading-relaxed">
+                    Data provided via our ecosystem (Odd Agric, Eunoia, Tech Trek, Odd Bots) is used solely for the purpose of that specific venture. We do not cross-pollinate data or sell your identity to advertisers.
+                </p>
+            </div>
+
+            <div class="border-t border-[#333] pt-8">
+                <h3 class="text-xl font-bold mb-4 text-white">03. Security</h3>
+                <p class="text-[#888] leading-relaxed">
+                    We employ standard encryption protocols to protect your inputs. However, no transmission over the internet is completely secure. By using our grid, you acknowledge this reality.
+                </p>
+            </div>
+
+            <div class="border-t border-[#333] pt-8">
+                <h3 class="text-xl font-bold mb-4 text-white">04. Contact</h3>
+                <p class="text-[#888] leading-relaxed">
+                    For data removal requests or legal inquiries, direct your signals to <a href="mailto:oddtechnology@cc.cc" class="text-white underline hover:text-[#888]">oddtechnology@cc.cc</a>.
+                </p>
+            </div>
+        </div>
+        
+        <div class="mt-24 pt-8 border-t border-[#333] text-center">
+            <p class="text-[#444] text-xs font-technical uppercase tracking-wider">&copy; <span id="year"></span> Odd Tech. Engineered for Reality.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

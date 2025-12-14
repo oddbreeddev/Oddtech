@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO & Meta -->
+    <title>Odd Tech — Ecosystem</title>
+    <meta name="description" content="Odd Tech is a solution-driven technology company building practical, scalable, and meaningful tech products that solve real problems in Nigeria and beyond.">
+    <meta name="keywords" content="Odd Tech, Technology, Nigeria, Agritech, Edtech, Software, Hardware">
+    <meta name="author" content="Daniel Aminu">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oddtech.ng/">
+    <meta property="og:title" content="Odd Tech — Practical Tech. Real Impact.">
+    <meta property="og:description" content="Building technology that solves real problems in Nigeria first, and the world next.">
+    <meta property="og:image" content="https://oddtech.ng/og-image.jpg"> <!-- Placeholder for OG Image -->
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://oddtech.ng/">
+    <meta property="twitter:title" content="Odd Tech — Ecosystem">
+    <meta property="twitter:description" content="Building practical technology solutions for real-world problems.">
+    
+    <!-- Favicon (Base64 SVG) -->
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzBBMEEwQSIvPjxwYXRoIGQ9Ik05MCA1MCBBNDAgNDAgMCAxIDEgNTAgMTAgTDUwIDUwIFoiIGZpbGw9IiNGNEY0RjQiLz48L3N2Zz4=" type="image/svg+xml">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;700;900&family=Inter:wght@300;400;600&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+      /* Custom 'Odd' Texture - Noise */
+      .bg-noise {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 50;
+        opacity: 0.05;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+      
+      body {
+        background-color: #0A0A0A;
+        color: #F4F4F4;
+        font-family: 'Inter', sans-serif;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Space Grotesk', sans-serif;
+      }
+
+      .font-technical {
+        font-family: 'Archivo', sans-serif;
+      }
+
+      /* Custom scrollbar for brutalist feel */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0A0A0A;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      /* Selection color */
+      ::selection {
+        background: #F4F4F4;
+        color: #0A0A0A;
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fade-in-up {
+        opacity: 0; /* Start hidden */
+        animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      .animate-slide-down {
+        animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      .delay-100 { animation-delay: 100ms; }
+      .delay-200 { animation-delay: 200ms; }
+      .delay-300 { animation-delay: 300ms; }
+      .delay-500 { animation-delay: 500ms; }
+      .delay-700 { animation-delay: 700ms; }
+
+    </style>
+  </head>
+  <body class="overflow-x-hidden">
+    
+    <!-- Noise Overlay -->
+    <div class="bg-noise"></div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[#0A0A0A] z-[55] flex flex-col justify-center items-center opacity-0 pointer-events-none transition-all duration-300">
+        <a href="#philosophy" class="mobile-link text-3xl font-bold mb-8 hover:text-[#888] transition-colors">MANIFESTO</a>
+        <a href="#ventures" class="mobile-link text-3xl font-bold mb-8 hover:text-[#888] transition-colors">VENTURES</a>
+        <a href="#contact" class="mobile-link text-3xl font-bold mb-8 hover:text-[#888] transition-colors">CONTACT</a>
+        <div class="absolute bottom-10 text-[#666] font-technical text-xs uppercase tracking-widest">Odd Tech Ecosystem</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-[60] border-b border-[#333] bg-[#0A0A0A]/95 backdrop-blur-md animate-slide-down">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-4 text-[#F4F4F4] group">
+          <!-- Logo Icon (Concept A) -->
+          <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 transition-transform group-hover:rotate-90 duration-500">
+            <path d="M90 50 A40 40 0 1 1 50 10 L50 50 Z" fill="currentColor" />
+          </svg>
+          <!-- Wordmark (Concept C) -->
+          <div class="block">
+            <span class="font-bold text-xl tracking-tight flex items-baseline select-none">
+              OD<span class="translate-y-[4px] inline-block">D</span>
+              <span class="ml-2">TECH</span>
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden sm:flex items-center gap-6">
+          <a href="#philosophy" class="text-xs md:text-sm font-technical text-[#888] hover:text-white transition-colors uppercase tracking-wider">Manifesto</a>
+          <a href="#ventures" class="text-xs md:text-sm font-technical text-[#888] hover:text-white transition-colors uppercase tracking-wider">Ventures</a>
+          <a href="#contact" class="px-6 py-2 font-technical text-[10px] md:text-xs uppercase tracking-widest border border-[#F4F4F4] text-[#F4F4F4] hover:bg-[#F4F4F4] hover:text-[#0A0A0A] transition-all duration-300 hover:scale-105 active:scale-95">
+            Contact
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="sm:hidden text-white font-technical text-xs uppercase tracking-widest z-[70] focus:outline-none">
+            MENU
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-20 border-b border-[#333] relative overflow-hidden">
+        <!-- Decorative giant logo watermark -->
+        <div class="absolute -right-[10%] -bottom-[10%] text-[#111] pointer-events-none select-none -z-10 animate-fade-in-up delay-700">
+           <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[80vw] h-[80vw] md:w-[600px] md:h-[600px] opacity-40 rotate-12">
+            <path d="M90 50 A40 40 0 1 1 50 10 L50 50 Z" fill="currentColor" />
+          </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 w-full">
+          <div class="max-w-4xl">
+            <div class="animate-fade-in-up">
+               <div class="inline-block px-3 py-1 border border-[#333] text-[#888] text-[10px] md:text-xs font-technical tracking-[0.2em] mb-8 uppercase bg-[#0A0A0A]">
+                  Engineered for Reality
+               </div>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl lg:text-9xl font-bold leading-[0.9] tracking-tighter mb-8 text-white animate-fade-in-up delay-100">
+              PRACTICAL TECH.<br/>
+              REAL IMPACT.
+            </h1>
+            
+            <p class="text-lg md:text-2xl text-[#888] max-w-2xl mb-12 font-light leading-relaxed animate-fade-in-up delay-200">
+              We don't build to impress algorithms. We build technology that solves real problems in Nigeria and beyond.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-300">
+              <a href="#ventures" class="px-6 py-3 font-technical text-sm uppercase tracking-widest bg-[#F4F4F4] text-[#0A0A0A] hover:bg-white border border-[#F4F4F4] text-center transition-colors">
+                View The Ecosystem
+              </a>
+              <a href="#philosophy" class="px-6 py-3 font-technical text-sm uppercase tracking-widest bg-transparent text-[#888] hover:text-[#F4F4F4] border border-transparent text-center transition-colors">
+                Read The Manifesto
+              </a>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="py-24 border-b border-[#333] bg-[#0F0F0F]">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start animate-on-scroll opacity-0 translate-y-8">
+        <div class="lg:sticky lg:top-32">
+          <span class="text-xs font-technical text-[#888] tracking-[0.2em] uppercase mb-4 block">01 — The Foundation</span>
+          <h2 class="text-4xl md:text-6xl font-bold mb-8 leading-none tracking-tight">ODD IS NOT RANDOM.<br/>IT IS INTENTIONAL.</h2>
+          <div class="w-24 h-1 bg-[#F4F4F4] mb-8"></div>
+        </div>
+        <div class="space-y-12">
+          <div class="group">
+             <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-[#888] transition-colors">Utility Over Hype</h3>
+             <p class="text-lg text-[#AAA] font-light leading-relaxed">
+               Most tech brands copy global ideas and ignore local realities. We design for constraints: low power, low data, and high impact. If it doesn't work offline, it probably doesn't work.
+             </p>
+          </div>
+          
+          <div class="group">
+             <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-[#888] transition-colors">The "Odd" Perspective</h3>
+             <p class="text-lg text-[#AAA] font-light leading-relaxed">
+               Odd stands for thinking differently from the norm. We build where others overlook. What looks "odd" to the mainstream is often essential to the underrepresented.
+             </p>
+          </div>
+
+          <div class="p-8 border border-[#333] bg-[#0A0A0A] relative overflow-hidden group hover:border-[#F4F4F4] transition-colors">
+            <div class="absolute top-0 right-0 p-2 opacity-20">
+               <svg width="40" height="40" viewBox="0 0 100 100" fill="none" class="w-16 h-16 group-hover:rotate-12 transition-transform duration-700">
+                <path d="M90 50 A40 40 0 1 1 50 10 L50 50 Z" fill="currentColor" />
+              </svg>
+            </div>
+            <p class="font-technical text-[#888] uppercase tracking-widest text-xs mb-4">Core Positioning</p>
+            <blockquote class="text-xl md:text-2xl text-white font-medium relative z-10">
+              "We don’t build tech because it’s fancy. We build tech because it’s needed."
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ventures / Ecosystem Section -->
+    <section id="ventures" class="py-24 border-b border-[#333]">
+      <div class="max-w-7xl mx-auto px-6 animate-on-scroll opacity-0 translate-y-8">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div>
+            <span class="text-xs font-technical text-[#888] tracking-[0.2em] uppercase mb-4 block">02 — The Ecosystem</span>
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tight">ACTIVE VENTURES</h2>
+          </div>
+          <p class="text-[#888] max-w-md text-right font-technical text-sm border-l border-[#333] pl-4">
+            BUILDING SOLUTIONS<br/>THAT SCALE.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#333] border border-[#333]">
+          
+          <!-- Venture 1: Odd Agric -->
+          <a href="odd-agric.html" class="block bg-[#0A0A0A] p-8 lg:p-12 hover:bg-[#111] transition-all duration-500 group relative overflow-hidden cursor-pointer z-20">
+            <!-- Top Right Tag -->
+            <div class="absolute top-0 right-0 bg-[#333] text-[#AAA] text-[10px] font-technical px-3 py-1 uppercase tracking-wider transition-all duration-300 group-hover:bg-[#F4F4F4] group-hover:text-[#0A0A0A]">Agritech / IoT</div>
+            
+            <!-- Background Number -->
+            <span class="text-6xl md:text-8xl font-bold text-[#1a1a1a] transition-all duration-700 ease-out mb-8 block font-technical absolute -bottom-8 -right-8 select-none group-hover:scale-125 group-hover:rotate-12 group-hover:text-[#222]">01</span>
+            
+            <!-- Content Wrapper for Lift -->
+            <div class="relative z-10 transition-transform duration-500 group-hover:-translate-y-1">
+                <h3 class="text-2xl font-bold mb-2 font-technical uppercase text-white group-hover:text-green-400 transition-colors flex items-center gap-2">
+                  Odd Agric
+                  <!-- Arrow Reveal -->
+                  <svg class="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </h3>
+                
+                <div class="relative inline-block mb-6">
+                    <p class="text-xs font-technical text-[#666] tracking-widest uppercase">Farm Management & Automated Irrigation</p>
+                    <!-- Expanding Underline -->
+                    <div class="absolute -bottom-1 left-0 w-0 h-px bg-green-400 transition-all duration-500 group-hover:w-full"></div>
+                </div>
+                
+                <p class="text-[#CCC] leading-relaxed mb-6">
+                  A smart system designed to maximize yield in resource-constrained environments. By automating irrigation based on real-time soil data, we remove the guesswork from farming.
+                </p>
+                <div class="border-t border-[#333] pt-4 group-hover:border-[#444] transition-colors">
+                   <p class="text-sm text-[#888] group-hover:text-[#AAA] transition-colors">
+                     <strong class="text-[#F4F4F4]">Value:</strong> Addressing food security by making precision farming accessible to smallholder farmers.
+                   </p>
+                </div>
+            </div>
+          </a>
+
+          <!-- Venture 2: Eunoia -->
+          <a href="eunoia.html" class="block bg-[#0A0A0A] p-8 lg:p-12 hover:bg-[#111] transition-all duration-500 group relative overflow-hidden cursor-pointer z-20">
+            <div class="absolute top-0 right-0 bg-[#333] text-[#AAA] text-[10px] font-technical px-3 py-1 uppercase tracking-wider transition-all duration-300 group-hover:bg-[#F4F4F4] group-hover:text-[#0A0A0A]">Consumer / Wellness</div>
+            
+            <span class="text-6xl md:text-8xl font-bold text-[#1a1a1a] transition-all duration-700 ease-out mb-8 block font-technical absolute -bottom-8 -right-8 select-none group-hover:scale-125 group-hover:rotate-12 group-hover:text-[#222]">02</span>
+            
+            <div class="relative z-10 transition-transform duration-500 group-hover:-translate-y-1">
+                <h3 class="text-2xl font-bold mb-2 font-technical uppercase text-white group-hover:text-blue-400 transition-colors flex items-center gap-2">
+                  Eunoia
+                  <svg class="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </h3>
+                
+                <div class="relative inline-block mb-6">
+                    <p class="text-xs font-technical text-[#666] tracking-widest uppercase">Comprehensive Self-Discovery</p>
+                    <div class="absolute -bottom-1 left-0 w-0 h-px bg-blue-400 transition-all duration-500 group-hover:w-full"></div>
+                </div>
+                
+                <p class="text-[#CCC] leading-relaxed mb-6">
+                  More than a wellness app, Eunoia is a framework for alignment. It helps individuals navigate their internal landscape to find clarity and purpose.
+                </p>
+                <div class="border-t border-[#333] pt-4 group-hover:border-[#444] transition-colors">
+                   <p class="text-sm text-[#888] group-hover:text-[#AAA] transition-colors">
+                     <strong class="text-[#F4F4F4]">Value:</strong> Clarity precedes impact. We build tools that help people understand themselves so they can build better for the world.
+                   </p>
+                </div>
+            </div>
+          </a>
+
+          <!-- Venture 3: Tech Trek -->
+          <a href="tech-trek.html" class="block bg-[#0A0A0A] p-8 lg:p-12 hover:bg-[#111] transition-all duration-500 group relative overflow-hidden cursor-pointer z-20">
+             <div class="absolute top-0 right-0 bg-[#333] text-[#AAA] text-[10px] font-technical px-3 py-1 uppercase tracking-wider transition-all duration-300 group-hover:bg-[#F4F4F4] group-hover:text-[#0A0A0A]">EdTech</div>
+            
+             <span class="text-6xl md:text-8xl font-bold text-[#1a1a1a] transition-all duration-700 ease-out mb-8 block font-technical absolute -bottom-8 -right-8 select-none group-hover:scale-125 group-hover:rotate-12 group-hover:text-[#222]">03</span>
+            
+            <div class="relative z-10 transition-transform duration-500 group-hover:-translate-y-1">
+                <h3 class="text-2xl font-bold mb-2 font-technical uppercase text-white group-hover:text-yellow-400 transition-colors flex items-center gap-2">
+                  Tech Trek
+                  <svg class="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </h3>
+                
+                <div class="relative inline-block mb-6">
+                    <p class="text-xs font-technical text-[#666] tracking-widest uppercase">Career Alignment Platform</p>
+                    <div class="absolute -bottom-1 left-0 w-0 h-px bg-yellow-400 transition-all duration-500 group-hover:w-full"></div>
+                </div>
+                
+                <p class="text-[#CCC] leading-relaxed mb-6">
+                  An educational platform that bridges the gap between learning code and building a career. We focus on the "how" and "why" of tech careers, not just syntax.
+                </p>
+                <div class="border-t border-[#333] pt-4 group-hover:border-[#444] transition-colors">
+                   <p class="text-sm text-[#888] group-hover:text-[#AAA] transition-colors">
+                     <strong class="text-[#F4F4F4]">Value:</strong> Creating a pipeline of problem-solvers, not just employees. Empowering the next generation of African builders.
+                   </p>
+                </div>
+            </div>
+          </a>
+
+          <!-- Venture 4: Odd Bots -->
+          <a href="odd-bots.html" class="block bg-[#0A0A0A] p-8 lg:p-12 hover:bg-[#111] transition-all duration-500 group relative overflow-hidden cursor-pointer z-20">
+             <div class="absolute top-0 right-0 bg-[#333] text-[#AAA] text-[10px] font-technical px-3 py-1 uppercase tracking-wider transition-all duration-300 group-hover:bg-[#F4F4F4] group-hover:text-[#0A0A0A]">Robotics / R&D</div>
+            
+             <span class="text-6xl md:text-8xl font-bold text-[#1a1a1a] transition-all duration-700 ease-out mb-8 block font-technical absolute -bottom-8 -right-8 select-none group-hover:scale-125 group-hover:rotate-12 group-hover:text-[#222]">04</span>
+            
+            <div class="relative z-10 transition-transform duration-500 group-hover:-translate-y-1">
+                <h3 class="text-2xl font-bold mb-2 font-technical uppercase text-white group-hover:text-red-400 transition-colors flex items-center gap-2">
+                  Odd Bots
+                  <svg class="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </h3>
+                
+                <div class="relative inline-block mb-6">
+                    <p class="text-xs font-technical text-[#666] tracking-widest uppercase">Agricultural Robotics</p>
+                    <div class="absolute -bottom-1 left-0 w-0 h-px bg-red-400 transition-all duration-500 group-hover:w-full"></div>
+                </div>
+                
+                <p class="text-[#CCC] leading-relaxed mb-6">
+                  Hardware built for the African terrain. We develop affordable, ruggedized robots to assist with labor-intensive farming tasks.
+                </p>
+                <div class="border-t border-[#333] pt-4 group-hover:border-[#444] transition-colors">
+                   <p class="text-sm text-[#888] group-hover:text-[#AAA] transition-colors">
+                     <strong class="text-[#F4F4F4]">Value:</strong> Scaling agriculture requires mechanization. We build robots that are tough enough for the real world.
+                   </p>
+                </div>
+            </div>
+          </a>
+
+          <!-- Venture 5: Odd Designs -->
+          <a href="odd-designs.html" class="block bg-[#0A0A0A] p-8 lg:p-12 hover:bg-[#111] transition-all duration-500 group relative overflow-hidden cursor-pointer z-20 md:col-span-2">
+             <div class="absolute top-0 right-0 bg-white text-black text-[10px] font-technical px-3 py-1 uppercase tracking-wider transition-all duration-300">Active / Launched</div>
+            
+             <span class="text-6xl md:text-8xl font-bold text-[#1a1a1a] transition-all duration-700 ease-out mb-8 block font-technical absolute -bottom-8 -right-8 select-none group-hover:scale-125 group-hover:rotate-12 group-hover:text-[#222]">05</span>
+            
+            <div class="relative z-10 transition-transform duration-500 group-hover:-translate-y-1">
+                <h3 class="text-2xl font-bold mb-2 font-technical uppercase text-white group-hover:text-pink-500 transition-colors flex items-center gap-2">
+                  Odd Designs
+                  <svg class="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </h3>
+                
+                <div class="relative inline-block mb-6">
+                    <p class="text-xs font-technical text-[#666] tracking-widest uppercase">Creative Agency & Design</p>
+                    <div class="absolute -bottom-1 left-0 w-0 h-px bg-pink-500 transition-all duration-500 group-hover:w-full"></div>
+                </div>
+                
+                <div class="flex flex-col md:flex-row gap-6">
+                  <p class="text-[#CCC] leading-relaxed mb-6 max-w-2xl">
+                    Creating visuals for companies at an amazing rate. A professional graphics design agency creating branding, social assets, and motion graphics without the bloat.
+                  </p>
+                </div>
+                
+                <div class="border-t border-[#333] pt-4 group-hover:border-[#444] transition-colors">
+                   <p class="text-sm text-[#888] group-hover:text-[#AAA] transition-colors">
+                     <strong class="text-[#F4F4F4]">Value:</strong> Professional visuals without the agency wait times. Speed and quality for fast-moving teams.
+                   </p>
+                </div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="py-24 border-b border-[#333]">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row gap-12 items-center animate-on-scroll opacity-0 translate-y-8">
+        <div class="w-full md:w-1/3 aspect-square bg-[#0F0F0F] flex items-center justify-center border border-[#333] relative group overflow-hidden">
+           <!-- Portrait -->
+           <img src="https://i.postimg.cc/CKDBNg7c/1000035025-01-1.jpg" alt="Daniel Aminu" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700">
+           <div class="absolute bottom-4 left-4 font-technical text-xs text-white bg-black/50 px-2 py-1 backdrop-blur-sm">ODDBREED</div>
+        </div>
+        <div class="w-full md:w-2/3">
+          <h3 class="text-4xl font-bold mb-2">DANIEL AMINU</h3>
+          <p class="text-[#888] font-technical uppercase tracking-widest text-sm mb-8 flex items-center gap-2">
+            <span class="w-2 h-2 bg-white rounded-full"></span>
+            Principal Builder & Founder
+          </p>
+          <div class="space-y-6 text-xl font-light text-[#CCC]">
+            <p>
+              "Odd Tech is a solution‑driven technology company. I didn't start this to chase unicorn status. I started it to prove that world-class technology can come from overlooked places."
+            </p>
+            <p>
+              We prioritize clarity over complexity, and impact over aesthetics.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-24 bg-[#0A0A0A]">
+      <div class="max-w-7xl mx-auto px-6 animate-on-scroll opacity-0 translate-y-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+          
+          <!-- Contact Column -->
+          <div>
+            <svg width="40" height="40" viewBox="0 0 100 100" fill="none" class="w-16 h-16 text-[#333] mb-8">
+              <path d="M90 50 A40 40 0 1 1 50 10 L50 50 Z" fill="currentColor" />
+            </svg>
+            <h4 class="text-3xl font-bold mb-8 text-white">HAVE A PROBLEM<br/>WORTH SOLVING?</h4>
+            <div class="flex flex-col gap-4 font-technical text-sm">
+               <a href="mailto:oddtechnology@cc.cc" class="group text-[#888] hover:text-white transition-colors duration-300 flex items-center gap-3">
+                 <span class="w-4 h-[1px] bg-[#666] group-hover:w-12 group-hover:bg-[#F4F4F4] transition-all duration-500 ease-out"></span> 
+                 <span class="transform group-hover:translate-x-2 transition-transform duration-300">oddtechnology@cc.cc</span>
+               </a>
+               <a href="https://oddtechnology.cc.cc" class="group text-[#888] hover:text-white transition-colors duration-300 flex items-center gap-3">
+                 <span class="w-4 h-[1px] bg-[#666] group-hover:w-12 group-hover:bg-[#F4F4F4] transition-all duration-500 ease-out"></span> 
+                 <span class="transform group-hover:translate-x-2 transition-transform duration-300">oddtechnology.cc.cc</span>
+               </a>
+            </div>
+          </div>
+
+          <!-- Quick Links (Ventures) -->
+          <div class="flex flex-col justify-end items-end md:items-end">
+             <h5 class="text-xs font-technical text-[#666] uppercase tracking-widest mb-6 text-right">Ventures</h5>
+             <div class="flex flex-col gap-3 text-right">
+                <a href="odd-agric.html" class="text-xl font-bold text-[#888] hover:text-green-400 transition-colors">Odd Agric</a>
+                <a href="eunoia.html" class="text-xl font-bold text-[#888] hover:text-blue-400 transition-colors">Eunoia</a>
+                <a href="tech-trek.html" class="text-xl font-bold text-[#888] hover:text-yellow-400 transition-colors">Tech Trek</a>
+                <a href="odd-bots.html" class="text-xl font-bold text-[#888] hover:text-red-400 transition-colors">Odd Bots</a>
+                <a href="odd-designs.html" class="text-xl font-bold text-[#888] hover:text-pink-500 transition-colors">Odd Designs</a>
+             </div>
+          </div>
+
+        </div>
+
+        <div class="border-t border-[#333] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-[#444] text-sm font-technical uppercase tracking-wider order-2 md:order-1">
+              &copy; <span id="year"></span> Odd Tech. Engineered for Reality.
+            </p>
+             <!-- Privacy Link -->
+            <a href="privacy.html" class="text-[#444] hover:text-white text-sm font-technical uppercase tracking-wider transition-colors order-3 md:order-3 md:ml-4">
+                Privacy
+            </a>
+            <div class="flex items-center gap-4 order-1 md:order-2 md:ml-auto">
+              <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-[#666] hover:text-white font-technical text-xs uppercase tracking-widest transition-colors">
+                Back to Top &uarr;
+              </button>
+              <div class="text-white">
+                <span class="font-bold text-xl tracking-tight flex items-baseline select-none">
+                  OD<span class="translate-y-[4px] inline-block">D</span>
+                  <span class="ml-2">TECH</span>
+                </span>
+              </div>
+            </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Simple JS for Dynamic Year and Smooth Actions -->
+    <script>
+      // Update Copyright Year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Mobile Menu Logic
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      mobileBtn.addEventListener('click', () => {
+        const isClosed = mobileMenu.classList.contains('opacity-0');
+        if (isClosed) {
+            mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+            mobileBtn.textContent = 'CLOSE';
+        } else {
+            mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+            mobileBtn.textContent = 'MENU';
+        }
+      });
+
+      mobileLinks.forEach(link => {
+          link.addEventListener('click', () => {
+              mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+              mobileBtn.textContent = 'MENU';
+          });
+      });
+
+      // Console Greeting
+      console.log(
+        "%c ODD TECH %c Engineered for Reality. ",
+        "background: #F4F4F4; color: #0A0A0A; font-weight: bold; padding: 4px;",
+        "background: #0A0A0A; color: #F4F4F4; padding: 4px;"
+      );
+      
+      // Scroll Entrance Observer for Contact/Footer
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('opacity-0', 'translate-y-8');
+            entry.target.classList.add('transition-all', 'duration-1000', 'ease-out');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>

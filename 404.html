@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — System Disconnect</title>
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzBBMEEwQSIvPjxwYXRoIGQ9Ik05MCA1MCBBNDAgNDAgMCAxIDEgNTAgMTAgTDUwIDUwIFoiIGZpbGw9IiNGNEY0RjQiLz48L3N2Zz4=" type="image/svg+xml">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;700;900&family=Inter:wght@300;400;600&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+      body { background-color: #0A0A0A; color: #F4F4F4; font-family: 'Inter', sans-serif; overflow: hidden; }
+      h1 { font-family: 'Space Grotesk', sans-serif; }
+      .font-technical { font-family: 'Archivo', sans-serif; }
+      
+      .glitch {
+        position: relative;
+      }
+      .glitch::before,
+      .glitch::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #0A0A0A;
+      }
+      .glitch::before {
+        left: 2px;
+        text-shadow: -1px 0 #ff00c1;
+        clip: rect(44px, 450px, 56px, 0);
+        animation: glitch-anim 5s infinite linear alternate-reverse;
+      }
+      .glitch::after {
+        left: -2px;
+        text-shadow: -1px 0 #00fff9;
+        clip: rect(44px, 450px, 56px, 0);
+        animation: glitch-anim2 5s infinite linear alternate-reverse;
+      }
+      @keyframes glitch-anim {
+        0% { clip: rect(30px, 9999px, 10px, 0); }
+        20% { clip: rect(80px, 9999px, 90px, 0); }
+        40% { clip: rect(10px, 9999px, 50px, 0); }
+        60% { clip: rect(60px, 9999px, 20px, 0); }
+        80% { clip: rect(40px, 9999px, 70px, 0); }
+        100% { clip: rect(90px, 9999px, 30px, 0); }
+      }
+      @keyframes glitch-anim2 {
+        0% { clip: rect(10px, 9999px, 80px, 0); }
+        20% { clip: rect(40px, 9999px, 20px, 0); }
+        40% { clip: rect(90px, 9999px, 30px, 0); }
+        60% { clip: rect(30px, 9999px, 60px, 0); }
+        80% { clip: rect(70px, 9999px, 40px, 0); }
+        100% { clip: rect(20px, 9999px, 90px, 0); }
+      }
+    </style>
+  </head>
+  <body class="flex flex-col items-center justify-center h-screen w-screen px-6 text-center">
+    
+    <div class="mb-8">
+        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" class="w-24 h-24 text-[#333]">
+           <path d="M90 50 A40 40 0 1 1 50 10 L50 50 Z" fill="currentColor" />
+        </svg>
+    </div>
+
+    <h1 class="text-9xl font-bold mb-4 glitch" data-text="404">404</h1>
+    <h2 class="text-xl md:text-2xl font-technical uppercase tracking-widest text-[#888] mb-12">System Disconnect</h2>
+    
+    <p class="max-w-md text-[#666] mb-12 font-light">
+      The signal has been lost. You have ventured too far into the void. The page you are looking for has been decommissioned or never existed.
+    </p>
+
+    <a href="index.html" class="px-8 py-4 border border-[#F4F4F4] text-[#F4F4F4] hover:bg-[#F4F4F4] hover:text-[#0A0A0A] font-technical uppercase tracking-widest text-sm transition-all">
+      Return to Grid
+    </a>
+
+  </body>
+</html>
